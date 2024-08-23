@@ -10,7 +10,7 @@ const EditUserPage = () => {
 
     const editUser = async (newUser) => {
         try{
-            const res = await fetch(`http://localhost:8080/users/${id}`, {
+            const res = await fetch(`https://practice-spring-backend-production.up.railway.app/users/${id}`, {
                 method:'PUT',
                 headers:{
                     'Content-Type': 'application/json',
