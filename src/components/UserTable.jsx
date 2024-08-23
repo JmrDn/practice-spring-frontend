@@ -6,7 +6,7 @@ const UserTable = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await fetch('http://localhost:8080/users');
+      const res = await fetch('https://practice-spring-backend-production.up.railway.app/users');
       const data = await res.json();
       const sortedData = data.sort((a, b) => a.id - b.id);
       setUsers(sortedData);

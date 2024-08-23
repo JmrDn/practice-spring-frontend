@@ -47,7 +47,7 @@ const EditUserPage = () => {
     useEffect(()=>{
         const fetchUser = async () =>{
             try{
-                const res = await fetch(`http://localhost:8080/users/${id}`);
+                const res = await fetch(`https://practice-spring-backend-production.up.railway.app/users/${id}`);
                 const data = await res.json();
                 setName(data.name);
                 setEmail(data.email);

@@ -9,7 +9,7 @@ const AddUserPage = () => {
 
     const addJob = async (newUser) => {
         try{
-            const res = await fetch('http://localhost:8080/user', {
+            const res = await fetch('https://practice-spring-backend-production.up.railway.app/user', {
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json',

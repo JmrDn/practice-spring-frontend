@@ -5,7 +5,7 @@ const UserRow = ({user}) => {
   
     const deleteUser = async () =>{
         try{
-            const res = await fetch(`http://localhost:8080/users/${user.id}`,{
+            const res = await fetch(`https://practice-spring-backend-production.up.railway.app/users/${user.id}`,{
                 method:'DELETE'
             });
 
@@ -13,7 +13,7 @@ const UserRow = ({user}) => {
                 console.log(`Failed to delete user with ID ${user.id}`);
             }
             else{
-              
+                
             }
         }catch(error){
             console.log(`Failed to delete user with ID ${user.id}`);
