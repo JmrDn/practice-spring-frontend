@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import UserRow from './UserRow';
+import { getApiUrl } from '../Util';
 
 const UserTable = () => {
   const [users, setUsers] = useState([]);
+  const API_URL = getApiUrl();
 
   const fetchUser = async () => {
     try {
-      const res = await fetch('https://practice-spring-backend-production.up.railway.app/users');
+      const res = await fetch(`${API_URL}/users`);
       const data = await res.json();
       const sortedData = data.sort((a, b) => a.id - b.id);
+      console.log(sortedData);
       setUsers(sortedData);
       
     } catch (error) {
@@ -18,7 +21,7 @@ const UserTable = () => {
 
 
   useEffect(() => {
-
+    
     fetchUser();
   }, []);
   return (

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
+import { getApiUrl } from '../Util';
 
 const AddUserPage = () => {
     const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
+    const API_URL = getApiUrl();
 
     const addJob = async (newUser) => {
         try{
-            const res = await fetch('https://practice-spring-backend-production.up.railway.app/user', {
+            const res = await fetch(`${API_URL}/user`, {
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json',

@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { getApiUrl } from '../Util'
 
 const UserRow = ({user}) => {
-  
+  const API_URL = getApiUrl();
     const deleteUser = async () =>{
         try{
-            const res = await fetch(`https://practice-spring-backend-production.up.railway.app/users/${user.id}`,{
+            const res = await fetch(`${API_URL}/users/${user.id}`,{
                 method:'DELETE'
             });
 

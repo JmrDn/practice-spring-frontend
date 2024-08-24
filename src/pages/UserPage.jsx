@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { getApiUrl } from '../Util';
 
 const UserPage = () => {
     const { id } = useParams();
     const [user, setUser] = useState({});
     const navigate = useNavigate();
+    const API_URL = getApiUrl();
 
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const res = await fetch(`https://practice-spring-backend-production.up.railway.app/users/${id}`);
+                const res = await fetch(`${API_URL}/users/${id}`);
                 const data = await res.json();
 
                 if (res.status === 500){
